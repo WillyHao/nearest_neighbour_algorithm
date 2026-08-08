@@ -5,8 +5,6 @@ def get_integer_input(message, minimum, maximum=None):
             number = int(input(message))
 
             if number < minimum: 
-                print("Please enter a number of at least", minimum)
-            elif maximum is not None and number > maximum:
                 print("Please enter a number between", minimum, "and", maximum)
             else:
                 return number
@@ -152,7 +150,8 @@ def main():
 
     number_of_cities = get_integer_input(
         "Enter the number of cities: ",
-        2
+        2, # Minimum of 2 cities
+        10 # Limit the number of cities to 10
     )
 
     cities = get_city_names(number_of_cities)
